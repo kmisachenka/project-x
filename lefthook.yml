@@ -1,0 +1,11 @@
+pre-commit:
+  parallel: true
+  commands:
+    prettier:
+      glob: '*.{ts,tsx}'
+      run: yarn format {staged_files}
+    linter:
+      glob: '*.{ts,tsx}'
+      run: yarn eslint --fix {staged_files}
+    lint-commit:
+      run: npx commitlint --edit
