@@ -1,0 +1,17 @@
+name: on-pull-request
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Run commitlint
+        uses: wagoid/commitlint-github-action@v1
