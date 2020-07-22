@@ -11,3 +11,5 @@ make dev  # запустит все приложения
 
 - web: http://localhost:3000/
 - api: http://localhost:4000/graphql
+
+TEST
