@@ -9,13 +9,15 @@
     "type-check:web": "tsc --project web/tsconfig.json --pretty --noEmit",
     "type-check:api": "tsc --project api/tsconfig.json --pretty --noEmit",
     "format": "prettier --write **/*.{ts,tsx}",
-    "lint": "eslint . --fix --ext .ts,.tsx",
+    "format:check": "prettier --check **/*.{ts,tsx}",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "yarn lint --fix",
     "lint:lockfile": "yarn lint:lockfile:common && yarn lint:lockfile:web && yarn lint:lockfile:api",
     "lint:lockfile:cmd": "lockfile-lint --allowed-hosts npm yarn --validate-https",
     "lint:lockfile:common": "yarn lint:lockfile:cmd --path yarn.lock",
     "lint:lockfile:web": "yarn lint:lockfile:cmd --path web/yarn.lock",
     "lint:lockfile:api": "yarn lint:lockfile:cmd --path api/yarn.lock",
-    "check-all": "yarn type-check && yarn lint && yarn lint:lockfile"
+    "check:all": "yarn type-check && yarn format:check && yarn lint && yarn lint:lockfile"
   },
   "dependencies": {},
   "devDependencies": {
