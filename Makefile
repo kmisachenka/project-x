@@ -18,3 +18,6 @@ cleanup:
 dev:
 	npx concurrently -p "[{name}]" -n "api,web" -c "bgBlue.bold,bgMagenta.bold" \
 		"cd api && yarn dev" "cd web && yarn dev"
+
+check:
+	yarn check:all
