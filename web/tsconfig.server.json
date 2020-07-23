@@ -4,9 +4,10 @@
     "target": "es2017",
     "outDir": "build",
     "lib": ["dom"],
+    "jsx": "preserve",
     "strict": false,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
+    "noEmit": false,
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true
