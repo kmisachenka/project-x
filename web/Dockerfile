@@ -1,16 +1,12 @@
-FROM mhart/alpine-node AS builder
+FROM mhart/alpine-node:14 AS builder
 WORKDIR /app
-COPY package.json yarn.lock ./
-RUN yarn install
+COPY package*.json ./
+RUN npm ci
 COPY . .
-RUN yarn build
+RUN npm run build
 
-FROM mhart/alpine-node:base
+FROM mhart/alpine-node:slim-14
 WORKDIR /app
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/build ./build
-COPY --from=builder /app/src ./src
+COPY --from=builder /app/ ./
 EXPOSE 3000
 CMD ["node", "build/server"]

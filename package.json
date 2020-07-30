@@ -5,19 +5,19 @@
   "author": "Kiryl Misachenka <kmisachenka@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "type-check": "yarn type-check:web && yarn type-check:api",
+    "type-check": "npm run type-check:web && npm run type-check:api",
     "type-check:web": "tsc --project web/tsconfig.json --pretty --noEmit",
     "type-check:api": "tsc --project api/tsconfig.json --pretty --noEmit",
     "format": "prettier --write **/*.{ts,tsx}",
     "format:check": "prettier --check **/*.{ts,tsx}",
     "lint": "eslint . --ext .ts,.tsx",
-    "lint:fix": "yarn lint --fix",
-    "lint:lockfile": "yarn lint:lockfile:common && yarn lint:lockfile:web && yarn lint:lockfile:api",
+    "lint:fix": "npm run lint --fix",
+    "lint:lockfile": "npm run lint:lockfile:common && npm run lint:lockfile:web && npm run lint:lockfile:api",
     "lint:lockfile:cmd": "lockfile-lint --allowed-hosts npm yarn --validate-https",
-    "lint:lockfile:common": "yarn lint:lockfile:cmd --path yarn.lock",
-    "lint:lockfile:web": "yarn lint:lockfile:cmd --path web/yarn.lock",
-    "lint:lockfile:api": "yarn lint:lockfile:cmd --path api/yarn.lock",
-    "check:all": "yarn type-check && yarn format:check && yarn lint && yarn lint:lockfile"
+    "lint:lockfile:common": "npm run lint:lockfile:cmd -- --path package-lock.json",
+    "lint:lockfile:web": "npm run lint:lockfile:cmd -- --path web/package-lock.json",
+    "lint:lockfile:api": "npm run lint:lockfile:cmd -- --path api/package-lock.json",
+    "check:all": "npm run type-check && npm run format:check && npm run lint && npm run lint:lockfile"
   },
   "dependencies": {},
   "devDependencies": {
