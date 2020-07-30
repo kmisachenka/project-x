@@ -1,9 +1,9 @@
 FROM mhart/alpine-node:14 as builder
 WORKDIR /app
-COPY package.json yarn.lock ./
-RUN yarn install
+COPY package*.json ./
+RUN npm ci
 COPY . .
-RUN yarn build
+RUN npm run build
 
 FROM mhart/alpine-node:slim-14
 WORKDIR /app

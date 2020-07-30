@@ -4,20 +4,20 @@ deps:
 	@make install-api-deps
 
 install-common-deps:
-	yarn install
+	npm install --progress=false
 
 install-web-deps:
-	cd web && yarn install
+	cd web && npm install --progress=false
 
 install-api-deps:
-	cd api && yarn install
+	cd api && npm install --progress=false
 
 cleanup:
 	npx rimraf node_modules web/node_modules api/node_modules
 
 dev:
 	npx concurrently -p "[{name}]" -n "api,web" -c "bgBlue.bold,bgMagenta.bold" \
-		"cd api && yarn dev" "cd web && yarn dev"
+		"cd api && npm run dev" "cd web && npm run dev"
 
 check:
-	yarn check:all
+	npm run check:all
