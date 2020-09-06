@@ -1,11 +1,9 @@
-// eslint-disable-next-line eslint-comments/disable-enable-pair
-/* eslint-disable @typescript-eslint/no-var-requires */
-const express = require('express');
-const next = require('next');
-const helmet = require('helmet');
-const nextI18NextMiddleware = require('next-i18next/middleware').default;
+import express from 'express';
+import helmet from 'helmet';
+import next from 'next';
+import nextI18NextMiddleware from 'next-i18next/middleware';
 
-const i18n = require('./src/i18n');
+import { i18n } from './src/i18n';
 
 const port = process.env.PORT || 3000;
 const app = next({ dev: process.env.NODE_ENV !== 'production' });
@@ -23,6 +21,3 @@ const handle = app.getRequestHandler();
   await server.listen(port);
   console.log(`🚀 web ready on http://localhost:${port}`); // eslint-disable-line no-console
 })();
-
-// dirty hack
-export {};

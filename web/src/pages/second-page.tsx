@@ -9,7 +9,7 @@ const SecondPage: React.FC = () => {
     <div>
       <h1>{t('welcome')}</h1>
       <Link href="/">
-        <Button variantColor="teal" size="lg">
+        <Button variantColor="green" size="lg">
           {t('go-back')}
         </Button>
       </Link>

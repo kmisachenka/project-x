@@ -32,7 +32,7 @@ const IndexPage: React.FC = () => {
         {t('change-language')}
       </Button>
       <Link href="/second-page">
-        <Button variantColor="green" size="lg">
+        <Button variantColor="red" size="lg">
           {t('goto-second-page')}
         </Button>
       </Link>
