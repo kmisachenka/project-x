@@ -1,11 +1,12 @@
 import { useQuery } from '@apollo/react-hooks';
 import { Button } from '@chakra-ui/core';
 import { gql } from 'apollo-boost';
+import { NextPage } from 'next';
 import React from 'react';
 
 import { Link, useTranslation } from '../i18n';
 
-const IndexPage: React.FC = () => {
+const IndexPage: NextPage = () => {
   const query = gql`
     query {
       hello

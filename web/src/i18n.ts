@@ -1,6 +1,8 @@
 import NextI18Next, { InitConfig } from 'next-i18next';
 
 const config: InitConfig = {
+  localePath:
+    typeof window === 'undefined' ? 'public/static/locales' : 'static/locales',
   strictMode: false,
   defaultLanguage: 'en',
   otherLanguages: ['ru'],

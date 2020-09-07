@@ -4,21 +4,19 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --files --transpile-only --project tsconfig.server.json server.ts",
-    "build": "next build && tsc --project tsconfig.server.json",
-    "start": "NODE_ENV=production node build/server"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "@apollo/react-hooks": "^4.0.0",
+    "@apollo/react-hooks": "^3.1.5",
     "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.0.35",
     "@emotion/server": "^11.0.0-next.15",
     "@emotion/styled": "^10.0.27",
     "apollo-boost": "^0.4.9",
     "emotion-theming": "^10.0.27",
-    "express": "^4.17.1",
     "graphql": "^15.3.0",
-    "helmet": "^4.1.0",
     "isomorphic-fetch": "^2.2.1",
     "next": "^9.5.3",
     "next-i18next": "^6.0.2",

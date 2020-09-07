@@ -13,7 +13,7 @@ services:
   api:
     build: api
     environment:
-      NODE_ENV: dev
+      NODE_ENV: production
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.api.rule=Path(`/graphql`)"

@@ -55,7 +55,8 @@
       {
         "checkFilenames": false,
         "whitelist": {
-          "props": true
+          "props": true,
+          "Props": true
         }
       }
     ]
