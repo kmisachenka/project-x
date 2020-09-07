@@ -1,7 +1,7 @@
 import express from 'express';
 import helmet from 'helmet';
 import next from 'next';
-import nextI18NextMiddleware from 'next-i18next/middleware';
+import { nextI18NextMiddleware } from 'next-i18next/middleware';
 
 import { i18n } from './src/i18n';
 

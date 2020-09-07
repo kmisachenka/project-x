@@ -18,7 +18,11 @@ const server = new ApolloServer({ typeDefs, resolvers });
 
 const app = express();
 
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
 
 server.applyMiddleware({ app });
 
