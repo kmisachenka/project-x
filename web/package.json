@@ -5,8 +5,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
+    "start": "next start",
     "build": "next build",
-    "start": "next start"
+    "build:analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.5",
@@ -14,11 +15,13 @@
     "@emotion/core": "^10.0.35",
     "@emotion/server": "^11.0.0-next.15",
     "@emotion/styled": "^10.0.27",
+    "@next/bundle-analyzer": "^9.5.3",
     "apollo-boost": "^0.4.9",
     "emotion-theming": "^10.0.27",
     "graphql": "^15.3.0",
     "isomorphic-fetch": "^2.2.1",
     "next": "^9.5.3",
+    "next-compose-plugins": "^2.2.0",
     "next-i18next": "^6.0.2",
     "next-with-apollo": "^5.1.0",
     "react": "^16.13.1",
