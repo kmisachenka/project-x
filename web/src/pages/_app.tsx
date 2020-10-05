@@ -1,12 +1,12 @@
 import { ApolloProvider } from '@apollo/react-hooks';
-import { ColorModeProvider, CSSReset, ThemeProvider } from '@chakra-ui/core';
+// import { ColorModeProvider, CSSReset, ThemeProvider } from '@chakra-ui/core';
+import { ChakraProvider } from '@chakra-ui/core';
 import { ApolloClient, NormalizedCacheObject } from 'apollo-boost';
 import App from 'next/app';
 import React from 'react';
 
 import withApollo from '../hocs/with-apollo';
 import { appWithTranslation } from '../i18n';
-import theme from '../theme';
 
 interface IProps {
   apollo: ApolloClient<NormalizedCacheObject>;
@@ -18,12 +18,9 @@ class MyApp extends App<IProps> {
 
     return (
       <ApolloProvider client={apollo}>
-        <ThemeProvider theme={theme}>
-          <ColorModeProvider>
-            <CSSReset />
-            <Component {...pageProps} />
-          </ColorModeProvider>
-        </ThemeProvider>
+        <ChakraProvider>
+          <Component {...pageProps} />
+        </ChakraProvider>
       </ApolloProvider>
     );
   }

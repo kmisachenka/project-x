@@ -25,15 +25,11 @@ const IndexPage: NextPage = () => {
     <div>
       <h1>{t('hello-world')}</h1>
       <h1>{queryResult?.data?.hello ?? 'none'}</h1>
-      <Button
-        variantColor="green"
-        size="lg"
-        onClick={handleChangeLanguageClick}
-      >
+      <Button colorScheme="green" size="lg" onClick={handleChangeLanguageClick}>
         {t('change-language')}
       </Button>
       <Link href="/second-page">
-        <Button variantColor="red" size="lg">
+        <Button colorScheme="red" size="lg">
           {t('goto-second-page')}
         </Button>
       </Link>
