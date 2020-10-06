@@ -1,5 +1,4 @@
 import { ApolloProvider } from '@apollo/react-hooks';
-// import { ColorModeProvider, CSSReset, ThemeProvider } from '@chakra-ui/core';
 import { ChakraProvider } from '@chakra-ui/core';
 import { ApolloClient, NormalizedCacheObject } from 'apollo-boost';
 import App from 'next/app';
