@@ -1,6 +1,6 @@
+import { gql } from '@apollo/client';
 import { useQuery } from '@apollo/react-hooks';
 import { Button } from '@chakra-ui/core';
-import { gql } from 'apollo-boost';
 import { NextPage } from 'next';
 import React from 'react';
 
