@@ -10,10 +10,11 @@
     "build:analyze": "ANALYZE=true next build"
   },
   "dependencies": {
+    "@apollo/client": "^3.2.2",
     "@apollo/react-hooks": "^4.0.0",
+    "@apollo/react-ssr": "^4.0.0",
     "@chakra-ui/core": "^1.0.0-rc.5",
     "@next/bundle-analyzer": "^9.5.3",
-    "apollo-boost": "^0.4.9",
     "graphql": "^15.3.0",
     "next": "^9.5.3",
     "next-compose-plugins": "^2.2.0",

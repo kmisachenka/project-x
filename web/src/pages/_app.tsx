@@ -1,22 +1,19 @@
 import { ApolloProvider } from '@apollo/react-hooks';
 import { ChakraProvider } from '@chakra-ui/core';
-import { ApolloClient, NormalizedCacheObject } from 'apollo-boost';
+// import { ApolloClient, NormalizedCacheObject } from 'apollo-boost';
 import App from 'next/app';
 import React from 'react';
 
-import withApollo from '../hocs/with-apollo';
+// import withApollo from '../hocs/with-apollo';
+import withApollo, { WithApollo } from '../apollo/with-apollo';
 import { appWithTranslation } from '../i18n';
 
-interface IProps {
-  apollo: ApolloClient<NormalizedCacheObject>;
-}
-
-class MyApp extends App<IProps> {
+class MyApp extends App<WithApollo> {
   render() {
-    const { Component, pageProps, apollo } = this.props;
+    const { Component, pageProps, apolloClient } = this.props;
 
     return (
-      <ApolloProvider client={apollo}>
+      <ApolloProvider client={apolloClient}>
         <ChakraProvider>
           <Component {...pageProps} />
         </ChakraProvider>
