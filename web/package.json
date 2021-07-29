@@ -10,7 +10,7 @@
     "build:analyze": "ANALYZE=true next build"
   },
   "dependencies": {
-    "@apollo/client": "^3.2.2",
+    "@apollo/client": "^3.4.0",
     "@apollo/react-hooks": "^4.0.0",
     "@apollo/react-ssr": "^4.0.0",
     "@chakra-ui/core": "^1.0.0-rc.5",
